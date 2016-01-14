@@ -1,0 +1,29 @@
+header {
+  height: $header-height;
+  .navbar-fixed-top {
+    padding: 20px 0;
+    background-color: $col-white-trans;
+    -webkit-box-shadow: 0px 4px 15px $col-black;
+    -moz-box-shadow: 0px 4px 15px $col-black;
+    box-shadow: 0px 4px 15px $col-black;
+  }
+  ul.nav {
+    list-style: none;
+    li {
+      a {
+        color: $col-redish;
+        font-family: $font-family-sans-serif;
+        font-size: 1.5em;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        &:hover {
+          background-color: $col-redish;
+          color: $col-white;
+          border-radius: 5px;
+          transition: color 0.5s ease-in, background-color 0.5s ease-out;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+table.game-table {
+  tr {
+    margin-top: 0.5em;
+    td {
+      padding: 0.3em;
+      & + td {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+div.gameslist {
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: rgba(0,0,0,0.5);
+}

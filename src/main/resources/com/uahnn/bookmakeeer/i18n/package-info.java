@@ -1,0 +1,1 @@
+package com.uahnn.bookmakeeer.i18n;

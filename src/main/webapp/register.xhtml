@@ -1,0 +1,39 @@
+<ui:composition template="templates/template_1col.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title" value="#{txt['register.title']}"/>
+
+    <ui:define name="main">
+        <h1><h:outputText value="#{txt['register.title']}"/></h1>
+        <p><h:outputText value="#{txt['register.text']}"/></p>
+
+        <h:form id="register-form">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="#{txt['form.firstname']}"/>
+                <h:inputText value="#{registerController.user.firstname}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.lastname']}"/>
+                <h:inputText value="#{registerController.user.lastname}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.street']}"/>
+                <h:inputText value="#{registerController.user.address}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.zip']}"/>
+                <h:inputText value="#{registerController.user.zip}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.city']}"/>
+                <h:inputText value="#{registerController.user.city}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.email']}"/>
+                <h:inputText value="#{registerController.user.email}"></h:inputText>
+
+                <h:outputLabel value="#{txt['form.password']}"/>
+                <h:inputSecret value="#{registerController.user.password}"></h:inputSecret>
+
+                <h:commandButton styleClass="btn btn-default" action="#{registerController.persist}" value="#{txt['register.button']}"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,32 @@
+// Search form
+.search-form {
+  @extend .form-inline;
+}
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-default;
+}
+form {
+  input {
+    color: $col-black;
+    padding: 0.3em;
+  }
+  table {
+    tr {
+      margin-top: 0.3em;
+      td {
+        padding: 0.2em;
+        & + td {
+          padding-left: 1em;
+        }
+      }
+    }
+  }
+}

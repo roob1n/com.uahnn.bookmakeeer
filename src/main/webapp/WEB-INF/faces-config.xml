@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>de</supported-locale>
+            <supported-locale>fr</supported-locale>
+        </locale-config>
+
+        <message-bundle>com.uahnn.bookmakeeer.i18n.messages</message-bundle>
+
+        <resource-bundle>
+            <base-name>com.uahnn.bookmakeeer.i18n.texts</base-name>
+            <var>txt</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>com.uahnn.bookmakeeer.i18n.teams</base-name>
+            <var>teams</var>
+        </resource-bundle>
+        <resource-bundle>
+            <base-name>com.uahnn.bookmakeeer.i18n.bets</base-name>
+            <var>bets</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>register</from-outcome>
+            <to-view-id>/register.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>games</from-outcome>
+            <to-view-id>/games.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

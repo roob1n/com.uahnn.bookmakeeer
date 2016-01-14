@@ -1,0 +1,44 @@
+<ui:composition template="../templates/template_2col.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="title" value="#{txt['game.create.title']}"/>
+
+    <ui:define name="main">
+        <h1><h:outputText value="#{txt['game.create.title']}"/></h1>
+
+        <h:form>
+            <h:panelGrid columns="2">
+            <h:outputLabel value="#{txt['game.hometeam']}"/>
+            <h:selectOneMenu value="#{gameController.homeTeamId}">
+                <f:selectItems value="#{gameController.teams}" var="team" itemValue="#{team.id}"
+                               itemLabel="#{teams[team.id]}"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel value="#{txt['game.awayteam']}"/>
+            <h:selectOneMenu value="#{gameController.awayTeamId}">
+                <f:selectItems value="#{gameController.teams}" var="team" itemValue="#{team.id}"
+                               itemLabel="#{teams[team.id]}"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel value="#{txt['game.starttime']}"/>
+            <h:inputText value="#{gameController.game.startTime}">
+                <f:convertDateTime pattern="dd.MM.yyyy HH:mm"/>
+                <f:passThroughAttribute name="placeholder" value="20.06.2016 19:00" />
+            </h:inputText>
+            </h:panelGrid>
+            <h:commandButton action="#{gameController.persist}" value="#{txt['game.create.button']}"/>
+            <h:commandButton action="#{gameController.persist}" value="#{txt['game.edit.button']}"/>
+        </h:form>
+    </ui:define>
+    <ui:define name="aside">
+        <ul>
+            <li><h:outputText value="Test123"/></li>
+            <li><h:outputText value="Test123"/></li>
+            <li><h:outputText value="Test123"/></li>
+            <li><h:outputText value="Test123"/></li>
+        </ul>
+    </ui:define>
+</ui:composition>

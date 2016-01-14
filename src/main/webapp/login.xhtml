@@ -1,0 +1,29 @@
+<ui:composition template="templates/template_1col.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title" value="#{txt['login.title']}"/>
+
+    <ui:define name="main">
+        <h1><h:outputText value="#{txt['login.title']}"/></h1>
+        <h:form id="login-form">
+            <h:panelGrid columns="2" rendered="#{!loginController.loggedIn}">
+
+                <h:outputLabel for="email" value="#{txt['form.email']}"/>
+
+                <h:inputText id="email" value="#{loginController.email}"/>
+
+                <h:outputLabel for="password" value="#{txt['form.password']}"/>
+
+                <h:inputText id="password" value="#{loginController.password}"/>
+
+            </h:panelGrid>
+
+            <h:commandButton styleClass="btn btn-default" value="#{txt['form.button.login']}" action="#{loginController.login}" rendered="#{!loginController.loggedIn}"/>
+
+            <h:commandButton styleClass="btn btn-default" value="#{txt['form.button.logout']}" acion="#{loginController.logout}" rendered="#{loginController.loggedIn}"/>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
