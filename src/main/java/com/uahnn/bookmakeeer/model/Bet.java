@@ -9,10 +9,14 @@ import java.util.List;
  */
 @Entity
 @Table(name = "bets")
+@NamedQuery(name = Bet.FIND_BY_GAME_ID, query = "select b from Bet b where b.gameId = :gameid")
 public class Bet {
+
+    public static final String FIND_BY_GAME_ID = "Bet.FIND_BY_GAME_ID";
+
     private int id;
     private int gameId;
-    private String type;
+    private BetType type;
     private BigDecimal odds;
     private Boolean occurred;
     private List<UserBet> userBets;
@@ -39,13 +43,13 @@ public class Bet {
         this.gameId = gameId;
     }
 
-    @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "type")
-    public String getType() {
+    public BetType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(BetType type) {
         this.type = type;
     }
 

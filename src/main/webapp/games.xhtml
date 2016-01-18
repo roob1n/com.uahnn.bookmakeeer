@@ -11,6 +11,20 @@
 
         <h:form>
             <h:panelGroup layout="block" styleClass="gameslist">
+                <h2><h:outputText value="#{txt['games.started.title']}"/></h2>
+                <h:dataTable value="#{gameController.startedGames}" var="game" styleClass="game-table">
+                    <h:column>
+                        <h:outputText styleClass="starttime" value="#{game.startTime}">
+                            <f:convertDateTime pattern="dd.MM.yyyy HH:mm"/>
+                        </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <h:outputText styleClass="game"
+                                      value="#{teams[game.homeTeam.id]} - #{teams[game.awayTeam.id]}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <h:panelGroup layout="block" styleClass="gameslist">
                 <h2><h:outputText value="#{txt['games.upcoming.title']}"/></h2>
                 <h:dataTable value="#{gameController.upcomingGames}" var="game" styleClass="game-table">
                     <h:column>
@@ -29,8 +43,8 @@
                 </h:dataTable>
             </h:panelGroup>
             <h:panelGroup layout="block" styleClass="gameslist">
-                <h2><h:outputText value="#{txt['games.past.title']}"/></h2>
-                <h:dataTable value="#{gameController.pastGames}" var="game" styleClass="game-table">
+                <h2><h:outputText value="#{txt['games.ended.title']}"/></h2>
+                <h:dataTable value="#{gameController.endedGames}" var="game" styleClass="game-table">
                     <h:column>
                         <h:outputText styleClass="starttime" value="#{game.startTime}">
                             <f:convertDateTime pattern="dd.MM.yyyy HH:mm"/>
@@ -38,7 +52,7 @@
                     </h:column>
                     <h:column>
                         <h:outputText styleClass="game"
-                                      value="#{teams[game.homeTeam.id]} - #{teams[game.awayTeam.id]}"/>
+                                      value="#{teams[game.homeTeam.id]} #{game.homeTeamScore} - #{game.awayTeamScore} #{teams[game.awayTeam.id]}"/>
                     </h:column>
                 </h:dataTable>
             </h:panelGroup>

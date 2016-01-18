@@ -29,8 +29,8 @@
                 <f:passThroughAttribute name="placeholder" value="20.06.2016 19:00" />
             </h:inputText>
             </h:panelGrid>
-            <h:commandButton action="#{gameController.persist}" value="#{txt['game.create.button']}"/>
-            <h:commandButton action="#{gameController.persist}" value="#{txt['game.edit.button']}"/>
+            <h:commandButton action="#{gameController.createGame}" value="#{txt['game.create.button']}"/>
+            <h:commandButton action="#{gameController.updateGame}" value="#{txt['game.edit.button']}"/>
         </h:form>
     </ui:define>
     <ui:define name="aside">
